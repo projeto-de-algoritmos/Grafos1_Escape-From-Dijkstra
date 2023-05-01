@@ -32,15 +32,15 @@ Na figura 1, encontra-se mapa estático do jogo no qual os testes foram realizad
 <img src="assets/mapaEstatico.png">
 <p align="center">Figura 1 - Mapa Estático.</p>
 
-Na figura 2, encontra-se o Caso Teste 1.<br><br>
+Na figura 2, encontra-se o Caso Teste 1.<br>
 <img src="assets/caso_teste1.png">
 <p align="center">Figura 2 - Caso Teste 1.</p>
 
-Na figura 3, encontra-se o Caso Teste 2.<br><br>
+Na figura 3, encontra-se o Caso Teste 2.<br>
 <img src="assets/caso_teste2.png">
 <p align="center">Figura 3 - Caso Teste 2.</p>
 
-Na figura 4, encontra-se o Caso Teste 3.<br><br>
+Na figura 4, encontra-se o Caso Teste 3.<br>
 <img src="assets/caso_teste3.png">
 <p align="center">Figura 4 - Caso Teste 3.</p>
 
