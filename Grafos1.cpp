@@ -6,18 +6,18 @@
 
 using namespace std;
 
-
+// Mapa estático com possíveis posições (x, y)
+// Sendo que o par{0, 0}, diferente da origem{0, 0}, é considerado uma PAREDE no mapa!
 set<pair<int, int>> list_position_can_move {
-  {7, 0},  {7, 1},  {7, 2}, {7, 3}, {7, 4}, {7, 5},
-  {6, 0},  {0, 0},  {6, 2}, {6, 3}, {6, 4}, {6, 5},
-  {5, 0},  {0, 0},  {5, 2}, {5, 3}, {5, 4}, {5, 5},
-  {4, 0},  {0, 0},  {4, 2}, {4, 3}, {4, 4}, {4, 5},
-  {3, 0},  {0, 0},  {3, 2}, {3, 3}, {3, 4}, {3, 5},
-  {2, 0},  {0, 0},  {2, 2}, {2, 3}, {2, 4}, {2, 5},
-  {1, 0},  {0, 0},  {0, 0}, {0, 0}, {0, 0}, {0, 0},
-  {0, 0},  {0, 1},  {0, 2}, {0, 3}, {0, 4}, {0, 5}
+  {0, 7},  {1, 7},  {2, 7}, {3, 7}, {4, 7}, {5, 7},
+  {0, 6},  {0, 0},  {2, 6}, {3, 6}, {4, 6}, {5, 6},
+  {0, 5},  {0, 0},  {2, 5}, {3, 5}, {4, 5}, {5, 5},
+  {0, 4},  {0, 0},  {2, 4}, {3, 4}, {4, 4}, {5, 4},
+  {0, 3},  {0, 0},  {2, 3}, {3, 3}, {4, 3}, {5, 3},
+  {0, 2},  {0, 0},  {2, 2}, {3, 2}, {4, 2}, {5, 2},
+  {0, 1},  {0, 0},  {0, 0}, {0, 0}, {0, 0}, {0, 0},
+  {0, 0},  {1, 0},  {2, 0}, {3, 0}, {4, 0}, {5, 0}
 };
-
 
 std::pair<int, int> move_bfs(std::pair<int, int> monster, std::pair<int, int> player ) {
 
@@ -61,7 +61,7 @@ std::pair<int, int> move_bfs(std::pair<int, int> monster, std::pair<int, int> pl
       next_position = father[next_position];
   }
 
-  cout << "a próxima posição do mostro é: " << endl;
+  cout << "A próxima posição do mostro é: ";
   cout << next_position.first << " " << next_position.second << endl;
 
   return next_position;
@@ -69,15 +69,31 @@ std::pair<int, int> move_bfs(std::pair<int, int> monster, std::pair<int, int> pl
 
 int main(){
   pair<int, int> monster, player;
+  auto map_width = 0, max_map_width = 8;
+
+  cout << "--------- Escape From Dijkstra ---------" << endl << endl; 
+  cout << "O mapa do jogo:" << endl; 
+  for (auto position : list_position_can_move){
+    if (map_width != max_map_width){
+      cout << "{" << position.first << ", " << position.second << "} ";
+    } else {
+      cout << endl;
+      map_width = 0;
+    }
+    map_width++;
+  }
+  cout << endl << endl;
 
   auto &[monster_x, monster_y] = monster;
+  cout << "Digite a posição (x,y) do monstro (ex.: 0 0): "; 
   cin >> monster_x >> monster_y;
 
   auto &[player_x, player_y] = player;
+  cout << "Digite a posição (x,y) do jogador (ex.: 7 5): ";
   cin >> player_x >> player_y;
 
+  cout << endl;
   while (monster != player)
    monster  =  move_bfs(monster, player);
-
 
 }
