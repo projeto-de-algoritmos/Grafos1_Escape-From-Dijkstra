@@ -83,7 +83,7 @@ Após as entradas, o algoritmo irá retornar como saída:
 ## Vídeo
 
 O vídeo explicando o algoritmo e o funcionamento dele, pode ser encontrado no link a seguir:
-- [Vídeo](https://youtu.be/emkVW0FeutQ)
+- [Vídeo](assets/videoGrafos1.mp4)
 
 
 
